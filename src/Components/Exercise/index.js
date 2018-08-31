@@ -8,17 +8,18 @@ const styles = {
     marginTop: 10,
     marginBottom: 10,
     height:500,
-    // overflowY:'auto'
+    overflowY:'auto'
   }
 };
 
 export default props => {
-  const exer=props.exercises
+  const exer=props.exercises;
+  const category =props.category;
   return (
     <Grid container sm={12}>
       <Grid item sm>
        
-      <RightPane styles={styles.Paper} exercises={exer} />
+      <RightPane styles={styles.Paper} exercises={exer} category={category} />
 
       </Grid>
 

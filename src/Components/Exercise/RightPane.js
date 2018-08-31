@@ -4,13 +4,16 @@ import { Paper,Typography ,ListItem ,ListItemText,List} from "@material-ui/core"
 export const RightPane = props => {
     const styles=props.styles ;
    const exercises =props.exercises ;
+   const category =props.category ;
+   console.log(category + exercises)
     return(
       
       <Fragment>
-      <Paper style={styles}>Right Pane
+      <Paper style={styles}>
     
       {
         exercises.map( ([item,exercises])=> 
+        !category || category == item  ? 
         <Fragment>
         <Typography  variant="headline" style={{textTransform:"capitalize"}}>
        {item}
@@ -29,7 +32,9 @@ export const RightPane = props => {
         </List>
 
         </Fragment>
+         
         
+        : null
           )
       }
       

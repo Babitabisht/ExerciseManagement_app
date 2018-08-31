@@ -3,22 +3,33 @@ import { AppBar, Paper, Tab, Tabs } from "@material-ui/core";
 
 export const Footer = props => {
   const muscles = props.muscles;
+  const category = props.category;
+  const onSelect = props.onSelect;
+
+  // console.log(category);
+  const index = category ? muscles.findIndex(item => item == category) + 1 : 0;
+  // console.log(index);
+  // console.log(muscles[index - 1]);
+
+  const onIndexSelected = (e, index) => {
+    onSelect(index === 0 ? "" : muscles[index - 1]);
+    console.log("clicked..........!!!");
+  };
+
   return (
     <div>
       <Paper square>
         <Tabs
-          value={0}
+          value={index}
           indicatorColor="primary"
           textColor="primary"
-          onChange={this.handleChange}
+          onChange={onIndexSelected}
           centered
         >
-        <Tab label="All" />
-          {muscles.map(item => <Tab label={item} />
-            )
-        }
-
-          
+          <Tab label="All" />
+          {muscles.map(item => (
+            <Tab label={item} />
+          ))}
         </Tabs>
       </Paper>
     </div>

@@ -7,7 +7,9 @@ import {muscles ,exercises} from './store' ;
 
 class App extends Component {
 state ={
-exercises
+exercises,
+category:'shoulders'
+
 }
 
 getExByMus() {
@@ -19,14 +21,19 @@ getExByMus() {
   } ,{})
  )
 }
+
+handleCategorySelected = category =>{
+  this.setState({category})
+   console.log(this.category)
+}
   render() {
     const exercises=this.getExByMus()
     return (
       <div className="App">
         <Header msg="hello" />
-      <Exercise exercises={exercises} />
+      <Exercise exercises={exercises}   category={this.state.category} />
 
-        <Footer muscles ={muscles} />
+        <Footer muscles ={muscles}  onSelect={this.handleCategorySelected}  category={this.state.category} />
       </div>
     );
   }

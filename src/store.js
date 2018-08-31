@@ -1,42 +1,46 @@
-export const muscles =['shoulders' ,'chest' ,'arms' ,'back' , 'legs'];
+export const muscles = ["shoulders", "chest", "arms", "back", "legs" ,"Belly"];
 
-export const exercises =[
+export const exercises = [
+  {
+    id: "chest",
+    title: "Any chest Exercise",
+    description: " Lorem ipsum dolor sit amet.",
+    muscles: "chest"
+  },
+  {
+    id: "back",
+    title: "Exercise for reducing back pain",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque. ",
+    muscles: "back"
+  },
+  {
+    id: "shoulder-exer",
+    title: "Exercise for shoulders ",
+    description:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, aut!  ",
+    muscles: "shoulders"
+  },
 
-{
-    id :'head-exer' ,
-    title :'Any head Exercise' ,
-    description :' Lorem ipsum dolor sit amet.',
-    muscles :'head muscles' 
-},
-{
-    id :'leg-exer' ,
-    title : ' Lorem ipsum dolor sit amet. ' ,
-    description : ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque. ' ,
-    muscles : '  Lorem ipsum dolor sit amet. '
-} ,
-{
-    id :'shoulder-exer' ,
-    title : ' Lorem ipsum dolor sit amet. ' ,
-    description : ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, aut!  ' ,
-    muscles : ' Lorem ipsum dolor sit amet.  '
-} ,
-
-{
-    id :'arm-exer' ,
-    title : ' Lorem ipsum dolor sit amet. ' ,
-    description : ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, accusantium. ' ,
-    muscles : ' Lorem ipsum dolor sit amet. '
-}
- ,
- {
-    id :' belly-exer ' ,
-    title : ' Lorem ipsum dolor sit amet. ' ,
-    description : ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, quam! ' ,
-    muscles : ' Lorem ipsum dolor sit amet. '
-},{
-    id :' foot-exer' ,
-    title : ' Lorem ipsum dolor sit amet. ' ,
-    description : ' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, ab. ' ,
-    muscles : ' Lorem ipsum dolor sit amet. '
-}
-]
+  {
+    id: "arm-exer",
+    title: "Exercise for arms ",
+    description:
+      " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, accusantium. ",
+    muscles: "arms"
+  },
+  {
+    id: " belly-exer ",
+    title: "Exercise for reducing belly fat ",
+    description:
+      " Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, quam! ",
+    muscles: "Belly"
+  },
+  {
+    id: "legs",
+    title: "Exercise for legs",
+    description:
+      " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati, ab. ",
+    muscles: "legs"
+  }
+];
