@@ -1,26 +1,19 @@
-import React ,{ Component, Fragment} from 'react' ;
+import React, { Component, Fragment } from "react";
 import { Paper, Typography } from "@material-ui/core";
-import Exercise from '.';
+import Exercise from ".";
 
 export const LeftPane = props => {
-   const styles=props.styles ;
-   
-    return(
-      
-      <Fragment>
+  const styles = props.styles;
+  const exercise = props.exercise;
+  
+  return (
+    <Fragment>
       <Paper style={styles}>
-      <Typography variant="display1" >
-      Welcome !
-      </Typography>
-      <Typography variant="body" style={{marginTop:10}}>
-      Please Select an Exercise From the list on the left.
-      </Typography>
-    
-     
+        <Typography variant="display1">{exercise.title}</Typography>
+        <Typography variant="body" style={{ marginTop: 10 }}>
+          {exercise.description}
+        </Typography>
       </Paper>
-      
-      
-      </Fragment>
-    );
-    
-}
+    </Fragment>
+  );
+};

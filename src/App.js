@@ -8,7 +8,8 @@ import {muscles ,exercises} from './store' ;
 class App extends Component {
 state ={
 exercises,
-category:'shoulders'
+category:'' ,
+exercise:{}
 
 }
 
@@ -26,12 +27,41 @@ handleCategorySelected = category =>{
   this.setState({category})
    console.log(this.category)
 }
+
+handleExerciseSelected = id => {
+  this.setState( ({exercises})=> ({
+    exercise :exercises.find(ex =>ex.id ===id)
+  })
+ )
+}
+
+handleExerciseCreate = (exercise) => {
+  console.log('Entered !!!')
+this.setState( ({exercises})=>({
+exercises:[
+  ...exercises,
+  exercise
+]
+
+})  )
+
+}
+
+
   render() {
     const exercises=this.getExByMus()
     return (
       <div className="App">
-        <Header msg="hello" />
-      <Exercise exercises={exercises}   category={this.state.category} />
+        <Header msg="hello"
+         muscles ={muscles} 
+         onExerciseCreate ={this.handleExerciseCreate}
+        
+        />
+      <Exercise exercises={exercises}
+       category={this.state.category} 
+      onSelect={this.handleExerciseSelected}   
+         exercise = {this.state.exercise}
+      />
 
         <Footer muscles ={muscles}  onSelect={this.handleCategorySelected}  category={this.state.category} />
       </div>

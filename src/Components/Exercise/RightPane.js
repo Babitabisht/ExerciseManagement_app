@@ -5,7 +5,8 @@ export const RightPane = props => {
     const styles=props.styles ;
    const exercises =props.exercises ;
    const category =props.category ;
-   console.log(category + exercises)
+   const onSelect = props.onSelect;
+   console.log(onSelect)
     return(
       
       <Fragment>
@@ -14,16 +15,21 @@ export const RightPane = props => {
       {
         exercises.map( ([item,exercises])=> 
         !category || category == item  ? 
-        <Fragment>
+        <Fragment key={item}>
         <Typography  variant="headline" style={{textTransform:"capitalize"}}>
        {item}
         </Typography>
 
 
         <List component="nav">
-        {exercises.map( ({title})=> <Fragment>
+
+        {exercises.map( ({id,title})=> <Fragment>
              <ListItem button>
-            <ListItemText primary={title} />
+            <ListItemText
+             primary={title}
+             onClick={ () => onSelect(id) }
+             
+             />
           </ListItem>
           
           </Fragment> )}

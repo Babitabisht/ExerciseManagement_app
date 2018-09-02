@@ -28,7 +28,7 @@ export const Footer = props => {
         >
           <Tab label="All" />
           {muscles.map(item => (
-            <Tab label={item} />
+            <Tab label={item} key={item} />
           ))}
         </Tabs>
       </Paper>
