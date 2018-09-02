@@ -1,11 +1,17 @@
 import React ,{ Component,Fragment} from 'react' ;
-import { Paper,Typography ,ListItem ,ListItemText,List} from "@material-ui/core";
+import { Paper,Typography ,ListItem ,ListItemText,List ,
+  ListItemSecondaryAction,IconButton
+
+} from "@material-ui/core";
+
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export const RightPane = props => {
     const styles=props.styles ;
    const exercises =props.exercises ;
    const category =props.category ;
    const onSelect = props.onSelect;
+   const onDelete=props.onDelete;
    console.log(onSelect)
     return(
       
@@ -30,6 +36,15 @@ export const RightPane = props => {
              onClick={ () => onSelect(id) }
              
              />
+            
+              <ListItemSecondaryAction>
+              
+                <IconButton aria-label="Comments"   onClick={()=>onDelete(id) } >
+                  <DeleteIcon />
+                </IconButton>
+              </ListItemSecondaryAction>
+            
+
           </ListItem>
           
           </Fragment> )}

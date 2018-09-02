@@ -17,11 +17,13 @@ export default props => {
   const category =props.category;
   const exercise=props.exercise;
   const onSelect =props.onSelect ;
+  const onDelete= props.onDelete;
+
   return (
     <Grid container sm={12}>
       <Grid item sm>
        
-      <RightPane styles={styles.Paper} exercises={exer} category={category}  onSelect={onSelect} />
+      <RightPane styles={styles.Paper} exercises={exer} category={category}  onSelect={onSelect} onDelete={onDelete} />
 
       </Grid>
 

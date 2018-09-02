@@ -46,6 +46,11 @@ exercises:[
 })  )
 
 }
+handleDelete = id =>{
+  this.setState( ({exercises})=> ({
+    exercises : exercises.filter(ex=>ex.id !==id )
+  }))
+}
 
 
   render() {
@@ -61,6 +66,7 @@ exercises:[
        category={this.state.category} 
       onSelect={this.handleExerciseSelected}   
          exercise = {this.state.exercise}
+         onDelete={this.handleDelete}
       />
 
         <Footer muscles ={muscles}  onSelect={this.handleCategorySelected}  category={this.state.category} />

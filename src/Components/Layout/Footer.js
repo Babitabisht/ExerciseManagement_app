@@ -17,7 +17,7 @@ export const Footer = props => {
   };
 
   return (
-    <div>
+    <div  style={{height:200}}>
       <Paper square>
         <Tabs
           value={index}
